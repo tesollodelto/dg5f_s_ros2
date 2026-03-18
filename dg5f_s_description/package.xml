@@ -3,7 +3,7 @@
 <package format="3">
 <name>dg5f_s_description</name>
   <version>0.0.1</version>
-<description>The Delto Gripper DG5F-S description package</description>
+<description>The Delto Gripper DG5FS description package</description>
   <maintainer email="khc@tesollo.com">hongcheol</maintainer>
   <license>BSD-3-Clause</license>
 
