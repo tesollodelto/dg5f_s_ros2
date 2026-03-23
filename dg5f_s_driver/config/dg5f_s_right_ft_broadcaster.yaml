@@ -1,0 +1,37 @@
+/**/controller_manager:
+  ros__parameters:
+    fingertip_1_broadcaster:
+      type: force_torque_sensor_broadcaster/ForceTorqueSensorBroadcaster
+    fingertip_2_broadcaster:
+      type: force_torque_sensor_broadcaster/ForceTorqueSensorBroadcaster
+    fingertip_3_broadcaster:
+      type: force_torque_sensor_broadcaster/ForceTorqueSensorBroadcaster
+    fingertip_4_broadcaster:
+      type: force_torque_sensor_broadcaster/ForceTorqueSensorBroadcaster
+    fingertip_5_broadcaster:
+      type: force_torque_sensor_broadcaster/ForceTorqueSensorBroadcaster
+
+/**/fingertip_1_broadcaster:
+  ros__parameters:
+    frame_id: "right_fingertip_1"
+    sensor_name: "right_fingertip_finger_1"
+
+/**/fingertip_2_broadcaster:
+  ros__parameters:
+    frame_id: "right_fingertip_2"
+    sensor_name: "right_fingertip_finger_2"
+
+/**/fingertip_3_broadcaster:
+  ros__parameters:
+    frame_id: "right_fingertip_3"
+    sensor_name: "right_fingertip_finger_3"
+
+/**/fingertip_4_broadcaster:
+  ros__parameters:
+    frame_id: "right_fingertip_4"
+    sensor_name: "right_fingertip_finger_4"
+
+/**/fingertip_5_broadcaster:
+  ros__parameters:
+    frame_id: "right_fingertip_5"
+    sensor_name: "right_fingertip_finger_5"
