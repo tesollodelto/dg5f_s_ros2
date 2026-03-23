@@ -4,7 +4,7 @@
 <name>dg5f_s_description</name>
   <version>0.0.1</version>
 <description>The Delto Gripper DG5FS description package</description>
-  <maintainer email="khc@tesollo.com">hongcheol</maintainer>
+  <maintainer email="khc@tesollo.com">hong</maintainer>
   <license>BSD-3-Clause</license>
 
   <depend>xacro</depend>

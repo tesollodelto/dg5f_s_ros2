@@ -43,7 +43,7 @@ setup(
     install_requires=['setuptools'],
     data_files=data_files,
     zip_safe=True,
-    maintainer='hongcheol',
+    maintainer='hong',
     maintainer_email='khc@tesollo.com',
     description='The ' + package_name + ' package',
     license='BSD3',
