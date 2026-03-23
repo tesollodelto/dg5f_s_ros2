@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - ros_distro: humble
+            os: ubuntu-22.04
+          - ros_distro: jazzy
+            os: ubuntu-24.04
+    container:
+      image: ros:${{ matrix.ros_distro }}-ros-base
+
+    steps:
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y git
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Clone required dependencies
+        run: |
+          mkdir -p /ros2_ws/src
+          cp -r $GITHUB_WORKSPACE /ros2_ws/src/dg5f_s_ros2
+          git clone https://github.com/tesollodelto/dg_hardware.git /ros2_ws/src/dg_hardware
+          git clone https://github.com/tesollodelto/dg_tcp_comm.git /ros2_ws/src/dg_tcp_comm
+
+      - name: Install rosdep dependencies
+        run: |
+          rosdep update
+          rosdep install --from-paths /ros2_ws/src --ignore-src -r -y
+
+      - name: Build
+        run: |
+          . /opt/ros/${{ matrix.ros_distro }}/setup.sh
+          cd /ros2_ws
+          colcon build --event-handlers console_cohesion+
