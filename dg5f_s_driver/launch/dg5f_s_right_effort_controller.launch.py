@@ -70,6 +70,16 @@ def generate_launch_description():
 
     declared_arguments.append(
         DeclareLaunchArgument(
+            "ft_broadcaster",
+            default_value="false",
+            description="Enable F/T sensor broadcaster (force/torque only, not tactile)"
+        )
+    )
+    ft_broadcaster = LaunchConfiguration("ft_broadcaster")
+
+
+    declared_arguments.append(
+        DeclareLaunchArgument(
             "io",
             default_value="false",
             description="Enable IO interface"
@@ -113,7 +123,7 @@ def generate_launch_description():
             ("~/robot_description", "/" + ns + "/robot_description"),
         ],
         output="screen",
-        condition=UnlessCondition(fingertip_sensor),
+        condition=UnlessCondition(ft_broadcaster),
     )
 
     control_node_with_ft = Node(
@@ -125,7 +135,7 @@ def generate_launch_description():
             ("~/robot_description", "/" + ns + "/robot_description"),
         ],
         output="screen",
-        condition=IfCondition(fingertip_sensor),
+        condition=IfCondition(ft_broadcaster),
     )
 
     robot_state_pub_node = Node(
@@ -165,7 +175,7 @@ def generate_launch_description():
                 arguments=[f"fingertip_{i}_broadcaster",
                            "-c", "/" + ns + "/controller_manager"],
                 output="screen",
-                condition=IfCondition(fingertip_sensor),
+                condition=IfCondition(ft_broadcaster),
             )
         )
 
