@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="dg5f_s_right">
+    <group name="finger_1">
+        <chain base_link="link_base" tip_link="link_1_tip" />
+    </group>
+    <group name="finger_2">
+        <chain base_link="link_base" tip_link="link_2_tip" />
+    </group>
+    <group name="finger_3">
+        <chain base_link="link_base" tip_link="link_3_tip" />
+    </group>
+    <group name="finger_4">
+        <chain base_link="link_base" tip_link="link_4_tip" />
+    </group>
+    <group name="finger_5">
+        <chain base_link="link_base" tip_link="link_5_tip" />
+    </group>
+    <group name="all_fingers">
+        <group name="finger_1" /><group name="finger_2" /><group name="finger_3" /><group name="finger_4" /><group name="finger_5" />
+    </group>
+
+    <group_state name="open" group="all_fingers">
+        <joint name="joint_1_1" value="0.0" /><joint name="joint_1_2" value="0.0" /><joint name="joint_1_3" value="0.0" /><joint name="joint_1_4" value="0.0" />
+        <joint name="joint_2_1" value="0.0" /><joint name="joint_2_2" value="0.0" /><joint name="joint_2_3" value="0.0" /><joint name="joint_2_4" value="0.0" />
+        <joint name="joint_3_1" value="0.0" /><joint name="joint_3_2" value="0.0" /><joint name="joint_3_3" value="0.0" /><joint name="joint_3_4" value="0.0" />
+        <joint name="joint_4_1" value="0.0" /><joint name="joint_4_2" value="0.0" /><joint name="joint_4_3" value="0.0" /><joint name="joint_4_4" value="0.0" />
+        <joint name="joint_5_1" value="0.0" /><joint name="joint_5_2" value="0.0" /><joint name="joint_5_3" value="0.0" /><joint name="joint_5_4" value="0.0" />
+    </group_state>
+
+    <!-- Disable collisions: adjacent links -->
+    <!-- link_base is root of dg5f_s URDF -->
+    <disable_collisions link1="link_base" link2="link_1_1" reason="Adjacent" />
+    <disable_collisions link1="link_1_1" link2="link_1_2" reason="Adjacent" />
+    <disable_collisions link1="link_1_2" link2="link_1_3" reason="Adjacent" />
+    <disable_collisions link1="link_1_3" link2="link_1_4" reason="Adjacent" />
+    <disable_collisions link1="link_1_4" link2="link_1_tip" reason="Adjacent" />
+
+    <disable_collisions link1="link_base" link2="link_2_1" reason="Adjacent" />
+    <disable_collisions link1="link_2_1" link2="link_2_2" reason="Adjacent" />
+    <disable_collisions link1="link_2_2" link2="link_2_3" reason="Adjacent" />
+    <disable_collisions link1="link_2_3" link2="link_2_4" reason="Adjacent" />
+    <disable_collisions link1="link_2_4" link2="link_2_tip" reason="Adjacent" />
+
+    <disable_collisions link1="link_base" link2="link_3_1" reason="Adjacent" />
+    <disable_collisions link1="link_3_1" link2="link_3_2" reason="Adjacent" />
+    <disable_collisions link1="link_3_2" link2="link_3_3" reason="Adjacent" />
+    <disable_collisions link1="link_3_3" link2="link_3_4" reason="Adjacent" />
+    <disable_collisions link1="link_3_4" link2="link_3_tip" reason="Adjacent" />
+
+    <disable_collisions link1="link_base" link2="link_4_1" reason="Adjacent" />
+    <disable_collisions link1="link_4_1" link2="link_4_2" reason="Adjacent" />
+    <disable_collisions link1="link_4_2" link2="link_4_3" reason="Adjacent" />
+    <disable_collisions link1="link_4_3" link2="link_4_4" reason="Adjacent" />
+    <disable_collisions link1="link_4_4" link2="link_4_tip" reason="Adjacent" />
+
+    <disable_collisions link1="link_base" link2="link_5_1" reason="Adjacent" />
+    <disable_collisions link1="link_5_1" link2="link_5_2" reason="Adjacent" />
+    <disable_collisions link1="link_5_2" link2="link_5_3" reason="Adjacent" />
+    <disable_collisions link1="link_5_3" link2="link_5_4" reason="Adjacent" />
+    <disable_collisions link1="link_5_4" link2="link_5_tip" reason="Adjacent" />
+</robot>

@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<robot name="dg5f_s_left" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Include dg5f_s URDF -->
+    <xacro:include filename="$(find dg5f_s_description)/urdf/dg5fs_left.urdf" />
+
+    <!-- Dummy base_link to avoid KDL root link inertia warning -->
+    <link name="base_link" />
+    <joint name="base_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="link_base" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <!-- ROS2 Control with Mock Hardware -->
+    <ros2_control name="DG5FSLeftMockHardware" type="system">
+        <hardware>
+            <plugin>mock_components/GenericSystem</plugin>
+            <param name="mock_sensor_commands">false</param>
+            <param name="position_state_following_offset">0.0</param>
+        </hardware>
+
+        <!-- Finger 1-5 joints (4 DOF each, 20 total) -->
+        <joint name="joint_1_1">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_1_2">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_1_3">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_1_4">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_2_1">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_2_2">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_2_3">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_2_4">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_3_1">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_3_2">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_3_3">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_3_4">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_4_1">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_4_2">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_4_3">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_4_4">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_5_1">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_5_2">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_5_3">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="joint_5_4">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+    </ros2_control>
+
+</robot>

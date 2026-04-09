@@ -1,0 +1,16 @@
+joint_limits:
+  joint_1_1: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_1_2: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_1_3: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_2_1: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_2_2: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_2_3: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_3_1: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_3_2: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_3_3: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_4_1: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_4_2: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_4_3: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_5_1: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_5_2: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
+  joint_5_3: { has_velocity_limits: true, max_velocity: 3.14, has_acceleration_limits: true, max_acceleration: 5.0 }
