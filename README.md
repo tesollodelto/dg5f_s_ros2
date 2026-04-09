@@ -15,6 +15,7 @@ Supports both **20-DOF** and **15-DOF** variants.
 | `dg5f_s_description` | URDF/xacro model, meshes, and RViz display launch |
 | `dg5f_s_driver` | ros2_control hardware driver and controller launch files |
 | `dg5f_s_gz` | Gazebo simulation |
+| `dg5f_s_moveit_config` | MoveIt 2 configuration (SRDF, planners, mock hardware) |
 
 ## Dependencies
 
@@ -33,7 +34,7 @@ git clone https://github.com/tesollodelto/dg_tcp_comm.git
 
 ```bash
 cd ~/ros2_ws
-colcon build --packages-select dg5f_s_description dg5f_s_driver dg5f_s_gz
+colcon build --packages-select dg5f_s_description dg5f_s_driver dg5f_s_gz dg5f_s_moveit_config
 source install/setup.bash
 ```
 
@@ -77,4 +78,23 @@ ros2 launch dg5f_s_driver dg5f_s_15dof_left_effort_controller.launch.py
 # Gazebo simulation
 ros2 launch dg5f_s_gz dg5f_s_15dof_right_gz.launch.py
 ros2 launch dg5f_s_gz dg5f_s_15dof_left_gz.launch.py
+```
+
+### Mock Hardware & MoveIt
+
+```bash
+# Mock hardware (no device required)
+ros2 launch dg5f_s_driver dg5f_s_right_mock.launch.py
+ros2 launch dg5f_s_driver dg5f_s_left_mock.launch.py
+
+# MoveIt 20-DOF (mock hardware, default)
+ros2 launch dg5f_s_moveit_config dg5f_s_right_moveit.launch.py
+ros2 launch dg5f_s_moveit_config dg5f_s_left_moveit.launch.py
+
+# MoveIt 15-DOF
+ros2 launch dg5f_s_moveit_config dg5f_s_15dof_right_moveit.launch.py
+ros2 launch dg5f_s_moveit_config dg5f_s_15dof_left_moveit.launch.py
+
+# MoveIt (real hardware)
+ros2 launch dg5f_s_moveit_config dg5f_s_right_moveit.launch.py use_mock:=false delto_ip:=169.254.186.72
 ```
