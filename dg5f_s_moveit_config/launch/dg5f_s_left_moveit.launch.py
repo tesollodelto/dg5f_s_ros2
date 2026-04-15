@@ -30,7 +30,7 @@ def generate_launch_description():
         DeclareLaunchArgument("use_mock", default_value="true",
                               description="Use mock hardware (true) or real hardware (false)"))
     declared_arguments.append(
-        DeclareLaunchArgument("delto_ip", default_value="169.254.186.72",
+        DeclareLaunchArgument("delto_ip", default_value="169.254.186.73",
                               description="IP address for gripper"))
     declared_arguments.append(
         DeclareLaunchArgument("delto_port", default_value="502",
