@@ -10,6 +10,15 @@ find_package(rclcpp REQUIRED)
 find_package(delto_hardware REQUIRED)
 
 install(
+  PROGRAMS
+  script/dg5f_s_right_jtc_test.py
+  script/dg5f_s_left_jtc_test.py
+  script/dg5f_s_15dof_right_jtc_test.py
+  script/dg5f_s_15dof_left_jtc_test.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(
   DIRECTORY config urdf launch
   DESTINATION share/${PROJECT_NAME}
 )
