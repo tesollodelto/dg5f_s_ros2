@@ -74,7 +74,7 @@ def generate_launch_description():
     mock_controllers = PathJoinSubstitution(
         [FindPackageShare("dg5f_s_driver"), "config", "dg5f_s_right_mock_controller.yaml"])
     real_controllers = PathJoinSubstitution(
-        [FindPackageShare("dg5f_s_driver"), "config", "dg5f_s_right_effort_controller.yaml"])
+        [FindPackageShare("dg5f_s_driver"), "config", "dg5f_s_right_controller.yaml"])
 
     control_node_mock = Node(
         package="controller_manager", executable="ros2_control_node", namespace=ns,
