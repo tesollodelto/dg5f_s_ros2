@@ -1,0 +1,62 @@
+planning_plugins:
+  - ompl_interface/OMPLPlanner
+request_adapters:
+  - default_planning_request_adapters/ResolveConstraintFrames
+  - default_planning_request_adapters/ValidateWorkspaceBounds
+  - default_planning_request_adapters/CheckStartStateBounds
+  - default_planning_request_adapters/CheckStartStateCollision
+start_state_max_bounds_error: 0.1
+
+planner_configs:
+  RRTConnectkConfigDefault:
+    type: geometric::RRTConnect
+    range: 0.0
+  RRTkConfigDefault:
+    type: geometric::RRT
+    range: 0.0
+    goal_bias: 0.05
+  PRMkConfigDefault:
+    type: geometric::PRM
+    max_nearest_neighbors: 10
+
+finger_1:
+  default_planner_config: RRTConnectkConfigDefault
+  planner_configs:
+    - RRTConnectkConfigDefault
+    - RRTkConfigDefault
+    - PRMkConfigDefault
+
+finger_2:
+  default_planner_config: RRTConnectkConfigDefault
+  planner_configs:
+    - RRTConnectkConfigDefault
+    - RRTkConfigDefault
+    - PRMkConfigDefault
+
+finger_3:
+  default_planner_config: RRTConnectkConfigDefault
+  planner_configs:
+    - RRTConnectkConfigDefault
+    - RRTkConfigDefault
+    - PRMkConfigDefault
+
+finger_4:
+  default_planner_config: RRTConnectkConfigDefault
+  planner_configs:
+    - RRTConnectkConfigDefault
+    - RRTkConfigDefault
+    - PRMkConfigDefault
+
+finger_5:
+  default_planner_config: RRTConnectkConfigDefault
+  planner_configs:
+    - RRTConnectkConfigDefault
+    - RRTkConfigDefault
+    - PRMkConfigDefault
+
+all_fingers:
+  default_planner_config: RRTConnectkConfigDefault
+  planner_configs:
+    - RRTConnectkConfigDefault
+    - RRTkConfigDefault
+    - PRMkConfigDefault

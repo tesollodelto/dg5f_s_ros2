@@ -59,9 +59,12 @@ def generate_launch_description():
     srdf_content = Command(["cat ", PathJoinSubstitution([FindPackageShare("dg5f_s_moveit_config"), "srdf", "dg5f_s_15dof_right.srdf"])])
     robot_description_semantic = {"robot_description_semantic": ParameterValue(srdf_content, value_type=str)}
 
-    kinematics_yaml = load_yaml("dg5f_s_moveit_config", "config/kinematics.yaml")
+    ros_distro = os.environ.get("ROS_DISTRO", "humble")
+    cfg_suffix = "_jazzy" if ros_distro == "jazzy" else ""
+
+    kinematics_yaml = load_yaml("dg5f_s_moveit_config", f"config/kinematics{cfg_suffix}.yaml")
     joint_limits_yaml = load_yaml("dg5f_s_moveit_config", "config/joint_limits_15dof.yaml")
-    ompl_planning_yaml = load_yaml("dg5f_s_moveit_config", "config/ompl_planning.yaml")
+    ompl_planning_yaml = load_yaml("dg5f_s_moveit_config", f"config/ompl_planning{cfg_suffix}.yaml")
     moveit_controllers_yaml = load_yaml("dg5f_s_moveit_config", "config/moveit_controllers_15dof_right.yaml")
 
     moveit_config = {
