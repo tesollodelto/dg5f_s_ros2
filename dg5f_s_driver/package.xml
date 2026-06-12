@@ -4,7 +4,7 @@
   <name>dg5f_s_driver</name>
   <version>0.0.1</version>
   <description>DG5F-S Hand Driver Package</description>
-  <maintainer email="khc@tesollo.com">hong</maintainer>
+  <maintainer email="khc@tesollo.com">hongcheol</maintainer>
   <license>BSD-3-Clause</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
@@ -21,6 +21,7 @@
   <depend>xacro</depend>
 
   <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

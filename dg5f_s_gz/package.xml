@@ -4,13 +4,12 @@
   <name>dg5f_s_gz</name>
   <version>0.0.1</version>
   <description>Tesollo Delto-Gripper 5F-S ROS2 Gazebo package</description>
-  <maintainer email="khc@tesollo.com">hong</maintainer>
+  <maintainer email="khc@tesollo.com">hongcheol</maintainer>
   <license>BSD-3-Clause</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
-  <depend>std_msgs</depend>
   <depend>trajectory_msgs</depend>
   <depend>ign_ros2_control</depend>
   <depend>ros_gz</depend>
