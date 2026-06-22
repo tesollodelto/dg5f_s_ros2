@@ -1,3 +1,10 @@
+> **⚠️ Experimental — ROS 2 Lyrical (work in progress)**
+>
+> This `lyrical` branch carries in-progress ROS 2 Lyrical compatibility changes
+> (modern CMake target linking, and the updated `on_init` hardware-interface API
+> in `delto_hardware`). **It has not been fully tested yet.** For stable use on
+> ROS 2 Humble / Jazzy, use the `main` branch.
+
 # DG5F-S ROS 2
 
 [![CI](https://github.com/tesollodelto/dg5f_s_ros2/actions/workflows/ci.yml/badge.svg)](https://github.com/tesollodelto/dg5f_s_ros2/actions/workflows/ci.yml)

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.12)
 project(dg5f_s_gz)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
@@ -10,16 +10,28 @@ find_package(rclcpp REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 
 add_executable(dg5f_s_left_gz_test_cpp src/dg5f_s_left_gz_test.cpp)
-ament_target_dependencies(dg5f_s_left_gz_test_cpp rclcpp trajectory_msgs)
+target_link_libraries(dg5f_s_left_gz_test_cpp
+  rclcpp::rclcpp
+  ${trajectory_msgs_TARGETS}
+)
 
 add_executable(dg5f_s_right_gz_test_cpp src/dg5f_s_right_gz_test.cpp)
-ament_target_dependencies(dg5f_s_right_gz_test_cpp rclcpp trajectory_msgs)
+target_link_libraries(dg5f_s_right_gz_test_cpp
+  rclcpp::rclcpp
+  ${trajectory_msgs_TARGETS}
+)
 
 add_executable(dg5f_s_15dof_left_gz_test_cpp src/dg5f_s_15dof_left_gz_test.cpp)
-ament_target_dependencies(dg5f_s_15dof_left_gz_test_cpp rclcpp trajectory_msgs)
+target_link_libraries(dg5f_s_15dof_left_gz_test_cpp
+  rclcpp::rclcpp
+  ${trajectory_msgs_TARGETS}
+)
 
 add_executable(dg5f_s_15dof_right_gz_test_cpp src/dg5f_s_15dof_right_gz_test.cpp)
-ament_target_dependencies(dg5f_s_15dof_right_gz_test_cpp rclcpp trajectory_msgs)
+target_link_libraries(dg5f_s_15dof_right_gz_test_cpp
+  rclcpp::rclcpp
+  ${trajectory_msgs_TARGETS}
+)
 
 install(TARGETS
   dg5f_s_left_gz_test_cpp
