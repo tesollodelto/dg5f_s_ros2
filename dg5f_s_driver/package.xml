@@ -16,6 +16,7 @@
   <depend>joint_state_broadcaster</depend>
   <depend>joint_trajectory_controller</depend>
   <depend>effort_controllers</depend>
+  <exec_depend>control_msgs</exec_depend>
   <depend>force_torque_sensor_broadcaster</depend>
   <depend>robot_state_publisher</depend>
   <depend>xacro</depend>
