@@ -19,6 +19,14 @@ install(
   script/dg5f_s_left_jtc_action_test.py
   script/dg5f_s_15dof_right_jtc_action_test.py
   script/dg5f_s_15dof_left_jtc_action_test.py
+  script/dg5f_s_right_pid_test.py
+  script/dg5f_s_left_pid_test.py
+  script/dg5f_s_15dof_right_pid_test.py
+  script/dg5f_s_15dof_left_pid_test.py
+  script/dg5f_s_right_pid_all_test.py
+  script/dg5f_s_left_pid_all_test.py
+  script/dg5f_s_15dof_right_pid_all_test.py
+  script/dg5f_s_15dof_left_pid_all_test.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

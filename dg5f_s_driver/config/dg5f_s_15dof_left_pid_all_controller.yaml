@@ -1,0 +1,70 @@
+/**/controller_manager:
+  ros__parameters:
+    update_rate: 300
+
+    # Single grouped PI position controller for all joints (output: effort)
+    joint_pospid: { type: pid_controller/PidController }
+
+    # State broadcaster (optional, usually loaded together)
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+# ------------- grouped PI gains -------------
+/**/joint_pospid:
+  ros__parameters:
+    dof_names:
+      [
+        "joint_1_1",
+        "joint_1_2",
+        "joint_1_3",
+        "joint_2_1",
+        "joint_2_2",
+        "joint_2_3",
+        "joint_3_1",
+        "joint_3_2",
+        "joint_3_3",
+        "joint_4_1",
+        "joint_4_2",
+        "joint_4_3",
+        "joint_5_1",
+        "joint_5_2",
+        "joint_5_3",
+      ]
+    command_interface: effort
+    reference_and_state_interfaces: ["position"]
+    gains:
+      joint_1_1: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_1_2: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_1_3: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_2_1: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_2_2: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_2_3: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_3_1: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_3_2: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_3_3: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_4_1: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_4_2: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_4_3: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_5_1: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_5_2: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+      joint_5_3: { p: 1.5, i: 0.0, d: 0.0, i_clamp_max: 0.0, i_clamp_min: 0.0 }
+# Joint State Broadcaster
+/**/joint_state_broadcaster:
+  ros__parameters:
+    update_rate: 300
+    joints:
+      - joint_1_1
+      - joint_1_2
+      - joint_1_3
+      - joint_2_1
+      - joint_2_2
+      - joint_2_3
+      - joint_3_1
+      - joint_3_2
+      - joint_3_3
+      - joint_4_1
+      - joint_4_2
+      - joint_4_3
+      - joint_5_1
+      - joint_5_2
+      - joint_5_3
