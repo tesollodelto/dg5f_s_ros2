@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental || false }}
     strategy:
       fail-fast: false
       matrix:
@@ -17,6 +18,10 @@ jobs:
             os: ubuntu-22.04
           - ros_distro: jazzy
             os: ubuntu-24.04
+          # Experimental: allowed to fail, does not gate Humble/Jazzy.
+          - ros_distro: lyrical
+            os: ubuntu-24.04
+            experimental: true
     container:
       image: ros:${{ matrix.ros_distro }}-ros-base
 
