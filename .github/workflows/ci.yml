@@ -22,6 +22,11 @@ jobs:
           - ros_distro: lyrical
             os: ubuntu-24.04
             experimental: true
+            # MoveIt is not released for Lyrical yet; skip those keys
+            # and leave dg5f_s_moveit_config out of the build there.
+            skip_keys: >-
+              moveit_ros_planning_interface moveit_ros_move_group moveit_ros_visualization moveit_simple_controller_manager moveit_planners_ompl moveit_kinematics
+            colcon_args: --packages-ignore dg5f_s_moveit_config
     container:
       image: ros:${{ matrix.ros_distro }}-ros-base
 
@@ -44,10 +49,11 @@ jobs:
       - name: Install rosdep dependencies
         run: |
           rosdep update
-          rosdep install --from-paths /ros2_ws/src --ignore-src -r -y
+          rosdep install --from-paths /ros2_ws/src --ignore-src -r -y \
+            ${{ matrix.skip_keys && format('--skip-keys "{0}"', matrix.skip_keys) || '' }}
 
       - name: Build
         run: |
           . /opt/ros/${{ matrix.ros_distro }}/setup.sh
           cd /ros2_ws
-          colcon build --event-handlers console_cohesion+
+          colcon build --event-handlers console_cohesion+ ${{ matrix.colcon_args }}
